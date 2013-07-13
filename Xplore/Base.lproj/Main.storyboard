@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9oZ-Sn-Iu9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller - Xplore-->
+        <scene sceneID="8fi-IW-O6F">
+            <objects>
+                <tableViewController id="O7I-m4-Kwj" customClass="HomeViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="225" sectionHeaderHeight="22" sectionFooterHeight="22" id="UWK-3c-3PV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94117653369903564" green="0.94117653369903564" blue="0.94117653369903564" alpha="1" colorSpace="deviceRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="O7I-m4-Kwj" id="oK4-j3-aE9"/>
+                            <outlet property="delegate" destination="O7I-m4-Kwj" id="I3W-HI-AB3"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Xplore" id="LeU-hR-nk1">
+                        <barButtonItem key="rightBarButtonItem" image="addBtn.png" id="6Px-2x-mUv">
+                            <connections>
+                                <action selector="pickNoteToShare:" destination="O7I-m4-Kwj" id="1cO-MA-jHl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="2g5-JG-TlI" kind="push" identifier="main home view note" id="uzE-Gg-V1Z"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6n-dj-pfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="-858"/>
+        </scene>
+        <!--Note DetailVC-->
+        <scene sceneID="gUy-Aq-ZBo">
+            <objects>
+                <viewController id="2g5-JG-TlI" customClass="NoteDetailVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kwp-pd-eoz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkr-kL-WLN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="0De-hl-94U"/>
+                    <connections>
+                        <outlet property="noteContentView" destination="Pkr-kL-WLN" id="men-Qx-Qdg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcj-XU-CeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2630" y="79"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="YZk-0p-1AI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uiz-Rs-fJf" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-icon.png" id="qU0-Mo-5WX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nka-XF-wuu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O7I-m4-Kwj" kind="relationship" relationship="rootViewController" id="MmD-1D-CE9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXT-Cy-Uo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="-858"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jIk-YJ-s9m">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9oZ-Sn-Iu9" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="iqm-le-Qdg">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Uiz-Rs-fJf" kind="relationship" relationship="viewControllers" id="3Id-l8-JYP"/>
+                        <segue destination="3Ah-ht-dIh" kind="relationship" relationship="viewControllers" id="YGZ-vl-EeN"/>
+                        <segue destination="jMj-sE-NtT" kind="relationship" relationship="viewControllers" id="m6R-Wz-1Tb"/>
+                        <segue destination="GAv-6b-hQC" kind="relationship" relationship="viewControllers" id="N7D-Ch-zNX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8Y-wR-J4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="88"/>
+        </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="dsb-bY-a9K">
+            <objects>
+                <viewController id="hVz-iJ-59m" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2PZ-pE-3CL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cM-XJ-EFm">
+                                <rect key="frame" x="11" y="10" width="299" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8e-ge-tfd">
+                                        <rect key="frame" x="14" y="14" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-Bc-rhK">
+                                        <rect key="frame" x="110" y="20" width="143" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDh-rz-hN2">
+                                        <rect key="frame" x="14" y="110" width="265" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showSharedNotes:" destination="hVz-iJ-59m" eventType="touchUpInside" id="LKI-yV-OJy"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTx-I0-9EQ">
+                                        <rect key="frame" x="28" y="33" width="53" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqv-uZ-6bl">
+                                        <rect key="frame" x="110" y="55" width="143" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.32156863810000003" green="0.63921570780000003" blue="0.74117648599999997" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInOrSignOut:" destination="hVz-iJ-59m" eventType="touchUpInside" id="jGS-RP-VwR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Settings" id="4Gg-6D-yZc"/>
+                    <connections>
+                        <outlet property="addPictureLabel" destination="KTx-I0-9EQ" id="2zD-uK-8dU"/>
+                        <outlet property="backgroundView" destination="7cM-XJ-EFm" id="7xW-qJ-eG2"/>
+                        <outlet property="nameLabel" destination="KN5-Bc-rhK" id="yqe-iu-XVK"/>
+                        <outlet property="profileImageView" destination="e8e-ge-tfd" id="C9P-Hm-48e"/>
+                        <outlet property="sharedNotesButton" destination="lDh-rz-hN2" id="1ir-lZ-aFm"/>
+                        <outlet property="signInBtn" destination="vqv-uZ-6bl" id="cCW-if-hdd"/>
+                        <segue destination="khq-bn-n99" kind="push" identifier="show shared notes" id="ssE-cB-rUD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cg7-rC-cpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="1729"/>
+        </scene>
+        <!--Shared NotesTVC - Shared Notes-->
+        <scene sceneID="AsY-cB-wJL">
+            <objects>
+                <tableViewController id="khq-bn-n99" customClass="SharedNotesTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ttu-4d-DPF">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shared note cell" id="hfR-d8-w3L">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="khq-bn-n99" id="Rwf-6Q-xyg"/>
+                            <outlet property="delegate" destination="khq-bn-n99" id="0fZ-zC-gAL"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Shared Notes" id="Jdt-lS-CUz"/>
+                    <connections>
+                        <segue destination="2g5-JG-TlI" kind="push" identifier="main home view note" id="MdV-DI-3nf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23Q-zi-Oqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087" y="1729"/>
+        </scene>
+        <!--Navigation Controller - Settings-->
+        <scene sceneID="Grx-O4-Hqi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GAv-6b-hQC" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-icon.png" id="Zsz-bx-TtB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F9m-oq-YzV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hVz-iJ-59m" kind="relationship" relationship="rootViewController" id="jkB-p0-uWY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXn-jM-bI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="1729"/>
+        </scene>
+        <!--Navigation Controller - Featured-->
+        <scene sceneID="ftH-lU-ukf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Ah-ht-dIh" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Featured" image="featured-icon.png" id="A19-ei-MdJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GhT-Uj-Zld">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qyr-hE-dqK" kind="relationship" relationship="rootViewController" id="26I-S2-ukx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4HC-pf-br5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="88"/>
+        </scene>
+        <!--Featured Note View Controller - Featured-->
+        <scene sceneID="p65-1P-AfL">
+            <objects>
+                <tableViewController id="Qyr-hE-dqK" customClass="FeaturedNoteViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dBf-Ho-Kom">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Qyr-hE-dqK" id="fgh-ji-n5D"/>
+                            <outlet property="delegate" destination="Qyr-hE-dqK" id="6UT-27-Z5X"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Featured" id="zqZ-sB-6o1"/>
+                    <connections>
+                        <segue destination="2g5-JG-TlI" kind="push" identifier="main home view note" id="5LT-yj-fcR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mo4-Jn-ioZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="88"/>
+        </scene>
+        <!--Navigation Controller - Discover-->
+        <scene sceneID="6v4-Kf-ehK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jMj-sE-NtT" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover-icon.png" id="taY-P8-0sn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rO6-aA-WjM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wxl-lK-cWa" kind="relationship" relationship="rootViewController" id="Wdm-5O-lPm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTi-Ot-Cda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="917"/>
+        </scene>
+        <!--DiscoverTVC - Discover-->
+        <scene sceneID="iek-i1-Ifn">
+            <objects>
+                <tableViewController id="wxl-lK-cWa" customClass="DiscoverTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="abl-AZ-asM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="wd6-bH-hhj">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="wxl-lK-cWa" id="iYB-V6-exi"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tag cell" id="gxs-O3-Vae">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wxl-lK-cWa" id="GKf-mN-8pR"/>
+                            <outlet property="delegate" destination="wxl-lK-cWa" id="AT9-I5-uyl"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Discover" id="rnm-wX-LyQ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="wd6-bH-hhj" id="C1H-ZR-6mE"/>
+                        <outlet property="searchDisplayController" destination="vgu-C2-EAv" id="puS-bE-VDf"/>
+                        <segue destination="2g5-JG-TlI" kind="push" identifier="main home view note" id="ofe-jg-VrC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAF-PB-oQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="vgu-C2-EAv">
+                    <connections>
+                        <outlet property="delegate" destination="wxl-lK-cWa" id="uUY-uw-iCZ"/>
+                        <outlet property="searchBar" destination="wd6-bH-hhj" id="qce-fM-Jws"/>
+                        <outlet property="searchContentsController" destination="wxl-lK-cWa" id="Fcx-8M-cAu"/>
+                        <outlet property="searchResultsDataSource" destination="wxl-lK-cWa" id="KqG-DW-iLQ"/>
+                        <outlet property="searchResultsDelegate" destination="wxl-lK-cWa" id="2MK-Gn-aAX"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1560" y="917"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addBtn.png" width="20" height="20"/>
+        <image name="discover-icon.png" width="30" height="30"/>
+        <image name="featured-icon.png" width="30" height="30"/>
+        <image name="home-icon.png" width="30" height="30"/>
+        <image name="settings-icon.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="DiscoverTVC" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DiscoverTVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FeaturedNoteViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeaturedNoteViewController.h"/>
+        </class>
+        <class className="HomeViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pickNoteToShare:"/>
+            </relationships>
+        </class>
+        <class className="NoteDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteDetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="noteContentView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="PFQueryTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showSharedNotes:"/>
+                <relationship kind="action" name="signInOrSignOut:"/>
+                <relationship kind="outlet" name="addPictureLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sharedNotesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="signInBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SharedNotesTVC" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SharedNotesTVC.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="MdV-DI-3nf"/>
+    </inferredMetricsTieBreakers>
+</document>
